@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<TabPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <tabs>
+      <Tab fx:id="editorTab" text="DrawingEditor_1">
+         <content>
+            <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <ToolBar fx:id="functionBar" layoutY="30.0" prefHeight="45.0" prefWidth="600.0" AnchorPane.topAnchor="30.0">
+                     <items>
+                        <Button fx:id="lineButton" mnemonicParsing="false" onAction="#lineSelect" prefHeight="31.0" prefWidth="87.0" text="Line" />
+                        <Button fx:id="rectangleButton" mnemonicParsing="false" onAction="#rectangleSelect" prefHeight="31.0" prefWidth="110.0" text="Rectangle" />
+                        <Button fx:id="selectButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Select" />
+                        <Button fx:id="undoButton" mnemonicParsing="false" onAction="#undoAction" prefHeight="31.0" prefWidth="87.0" text="Undo" />
+                        <Button fx:id="redoButton" mnemonicParsing="false" onAction="#redoAction" prefHeight="31.0" prefWidth="87.0" text="Redo" />
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearEditor" prefHeight="31.0" prefWidth="87.0" text="Clear">
+                           <tooltip>
+                              <Tooltip fx:id="tooltipClear" text="This will clear the canvas" />
+                           </tooltip></Button>
+                     </items>
+                  </ToolBar>
+                  <ToolBar fx:id="functionBarTwo" layoutY="355.0" prefHeight="45.0" prefWidth="600.0">
+                     <items>
+                        <Text fx:id="lineThickness" strokeType="OUTSIDE" strokeWidth="0.0" text="Line thickness:" />
+                        <Slider fx:id="lineSlider" prefHeight="18.0" prefWidth="109.0" />
+                        <Text fx:id="textR" strokeType="OUTSIDE" strokeWidth="0.0" text="R:" />
+                        <TextField fx:id="textFieldR" prefHeight="31.0" prefWidth="52.0" />
+                        <Text fx:id="textG" strokeType="OUTSIDE" strokeWidth="0.0" text="G:" />
+                        <TextField fx:id="textFieldG" prefHeight="31.0" prefWidth="52.0" />
+                        <Text fx:id="textB" strokeType="OUTSIDE" strokeWidth="0.0" text="B:" />
+                        <TextField fx:id="textFieldB" prefHeight="31.0" prefWidth="52.0" />
+                        <RadioButton fx:id="radioColor" mnemonicParsing="false" onAction="#setColor" text="Color" />
+                     </items>
+                  </ToolBar>
+                  <MenuBar fx:id="menuBar" layoutY="-2.0" prefHeight="32.0" prefWidth="600.0">
+                    <menus>
+                      <Menu fx:id="menu" mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem fx:id="menuNew" mnemonicParsing="false" text="New" />
+                              <MenuItem fx:id="menuSave" mnemonicParsing="false" text="Save" />
+                              <MenuItem fx:id="menuLoad" mnemonicParsing="false" text="Load" />
+                              <MenuItem fx:id="menuExit" mnemonicParsing="false" text="Exit" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Canvas fx:id="canvas" height="280.0" layoutY="75.0" width="600.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="editorTab1" text="DrawingEditor_2">
+         <content>
+            <AnchorPane fx:id="anchorPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <ToolBar fx:id="functionBar1" layoutY="30.0" prefHeight="45.0" prefWidth="600.0" AnchorPane.topAnchor="30.0">
+                     <items>
+                        <Button fx:id="lineButton1" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Line" />
+                        <Button fx:id="rectangleButton1" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" text="Rectangle" />
+                        <Button fx:id="undoButton1" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Select" />
+                        <Button fx:id="undoButton1" mnemonicParsing="false" onAction="#undoAction" prefHeight="31.0" prefWidth="87.0" text="Undo" />
+                        <Button fx:id="clearButton1" mnemonicParsing="false" onAction="#clearEditor" prefHeight="31.0" prefWidth="87.0" text="Clear" />
+                     </items>
+                  </ToolBar>
+                  <ToolBar fx:id="functionBarTwo1" layoutY="355.0" prefHeight="45.0" prefWidth="600.0">
+                     <items>
+                        <Text fx:id="lineThickness1" strokeType="OUTSIDE" strokeWidth="0.0" text="Line thickness:" />
+                        <Slider fx:id="lineSlider1" prefHeight="18.0" prefWidth="109.0" />
+                        <Text fx:id="textR1" strokeType="OUTSIDE" strokeWidth="0.0" text="R:" />
+                        <TextField fx:id="textFieldR1" prefHeight="31.0" prefWidth="52.0" />
+                        <Text fx:id="textG1" strokeType="OUTSIDE" strokeWidth="0.0" text="G:" />
+                        <TextField fx:id="textFieldG1" prefHeight="31.0" prefWidth="52.0" />
+                        <Text fx:id="textB1" strokeType="OUTSIDE" strokeWidth="0.0" text="B:" />
+                        <TextField fx:id="textFieldB1" prefHeight="31.0" prefWidth="52.0" />
+                        <RadioButton fx:id="radioColor1" mnemonicParsing="false" onAction="#setColor" text="Color" />
+                     </items>
+                  </ToolBar>
+                  <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="600.0">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="New" />
+                              <MenuItem mnemonicParsing="false" text="Save" />
+                              <MenuItem mnemonicParsing="false" text="Load" />
+                              <MenuItem mnemonicParsing="false" text="Exit" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="helpTab" text="Help">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="21.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shortcut functions:" />
+                  <TextArea fx:id="shortcutTextField" layoutX="21.0" layoutY="56.0" prefHeight="200.0" prefWidth="268.0" text="CTRL + X: Cut&#10;CTRL + V: Paste&#10;CTRL + L: Line selection&#10;CTRL + R: Rectangle selection" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>
